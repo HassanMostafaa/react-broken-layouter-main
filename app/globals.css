@@ -25,7 +25,7 @@
 }
 
 .dark {
-  --background: #171717;
+  --background: #000000;
   --foreground: #ffffff;
 
   /* Dark theme - neutral colors */
@@ -45,7 +45,7 @@
 
 html,
 body {
-  background: var(--neutral-100);
+  background: var(--neutral-50);
   color: var(--neutral-800);
   font-family: monospace !important;
 }

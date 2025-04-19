@@ -1,11 +1,22 @@
-import { Card } from "antd";
 import React, { FunctionComponent } from "react";
 
-interface CardProps {
-  title?: string;
+export interface CardProps {
+  icon: React.ReactNode;
+  title: string;
+  subtitle: string;
 }
-const MyCard: FunctionComponent<CardProps> = ({ title }) => {
-  return <Card title={title} />;
+const Card: FunctionComponent<CardProps> = ({ icon, subtitle, title }) => {
+  return (
+    <div className=" p-[16px] h-full lg:p-[2vw] rounded-2xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 flex flex-col gap-[16px] lg:gap-[1vw]">
+      {icon && (
+        <span className="bg-blue-100 w-fit rounded-lg p-2 lg:p-[.5vw] text-blue-700 dark:bg-blue-950 dark:text-blue-300">
+          {icon}
+        </span>
+      )}
+      {title && <h4 className="text-[16px] lg:text-xl font-bold">{title}</h4>}
+      {subtitle && <h4 className="text-[14px] lg:text-lg">{subtitle}</h4>}
+    </div>
+  );
 };
 
-export default MyCard;
+export default Card;

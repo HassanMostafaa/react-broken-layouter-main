@@ -33,7 +33,7 @@ export const Hero: React.FunctionComponent = () => (
     </motion.p>
 
     {/* CTAs */}
-    <div className="flex gap-[16px] lg:gap-[2vw]">
+    <div className="flex gap-[16px] flex-wrap justify-center items-center lg:gap-[2vw]">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
