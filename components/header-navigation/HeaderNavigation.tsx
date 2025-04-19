@@ -11,11 +11,11 @@ export const HeaderNavigation = () => {
         <TypewriterText
           text="React Broken Layouter"
           speed={50}
-          className="bg-gradient-to-r from-blue-600  via-purple-700 to-indigo-400 inline-block text-transparent bg-clip-text font-mediuem text-[16px] lg:text-2xl "
+          className="bg-gradient-to-r from-blue-600  via-purple-700 to-indigo-400 inline-block text-transparent bg-clip-text font-semibold text-[16px] lg:text-2xl "
         />
       </Link>
 
-      <div className="flex flex-col gap-2 items-end lg:gap-[2vw] lg:flex-row">
+      <div className="flex flex-col gap-2 items-center lg:gap-[2vw] lg:flex-row">
         <Link href="/docs" className="link">
           Documentation
         </Link>

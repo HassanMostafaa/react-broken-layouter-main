@@ -1,5 +1,6 @@
 "use client";
 
+import { Moon, Sun } from "../assets/icons";
 import { useTheme } from "../store/useTheme";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -14,7 +15,10 @@ export default function ThemeSwitcher() {
   };
 
   return (
-    <button onClick={toggleTheme} className="group cursor-pointer">
+    <button
+      onClick={toggleTheme}
+      className="group bg-neutral-100 dark:bg-neutral-800 p-[8px] lg:p-[.5vw] rounded-lg cursor-pointer"
+    >
       <AnimatePresence mode="wait">
         <motion.div
           key={theme}
@@ -24,7 +28,7 @@ export default function ThemeSwitcher() {
           transition={{ duration: 0.3 }}
           className="text-[16px] lg:text-xl link hover:text-neutral-800 dark:hover:text-neutral-200"
         >
-          {theme === "dark" ? "ִֶָ࣪◐" : "☀︎"}
+          {theme === "dark" ? <Moon size={"1vw"} /> : <Sun size={"1vw"} />}
         </motion.div>
       </AnimatePresence>
     </button>

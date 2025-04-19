@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ArrowRight } from "../assets/icons";
 
 export const Hero: React.FunctionComponent = () => (
   <motion.div
@@ -41,9 +42,12 @@ export const Hero: React.FunctionComponent = () => (
       >
         <Link
           href={"/docs"}
-          className="text-[16px] lg:text-xl font-semibold bg-blue-600 hover:bg-blue-700 px-[16px] py-[8px] lg:px-[1vw] lg:py-[.5vw] rounded-md text-blue-50"
+          className="flex gap-1 items-center  whitespace-nowrap text-[16px] lg:text-lg font-semibold bg-blue-600 hover:bg-blue-700 px-[16px] py-[8px] lg:px-[1vw] lg:py-[.5vw] rounded-md text-blue-50"
         >
-          Get started
+          Get started{" "}
+          <span>
+            <ArrowRight size={"1vw"} />
+          </span>
         </Link>
       </motion.div>
 
@@ -54,7 +58,7 @@ export const Hero: React.FunctionComponent = () => (
       >
         <Link
           href={"/demo"}
-          className="text-[16px] lg:text-xl font-semibold bg-blue-50 hover:bg-blue-100 px-[16px] py-[8px] lg:px-[1vw] lg:py-[.5vw] rounded-md border border-blue-600 text-blue-600"
+          className="text-[16px] lg:text-lg font-semibold bg-blue-50 hover:bg-blue-100 px-[16px] py-[8px] lg:px-[1vw] lg:py-[.5vw] rounded-md border border-blue-600 text-blue-600"
         >
           View demo
         </Link>

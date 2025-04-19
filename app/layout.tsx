@@ -1,4 +1,5 @@
 "use client";
+import { Footer } from "@/components/footer/Footer";
 import "./globals.css";
 import { HeaderNavigation } from "@/components/header-navigation/HeaderNavigation";
 import { useTheme } from "@/components/store/useTheme";
@@ -33,8 +34,11 @@ export default function RootLayout({
           !theme ? "opacity-0" : "opacity-100"
         } transition-opacity duration-1000`}
       >
-        <HeaderNavigation />
-        {children}
+        <div className="min-h-screen flex flex-col justify-between">
+          <HeaderNavigation />
+          <div className="min-h-[80vh]">{children}</div>
+          <Footer />
+        </div>
       </body>
     </html>
   );

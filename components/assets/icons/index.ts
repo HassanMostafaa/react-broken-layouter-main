@@ -3,3 +3,8 @@ export { Code } from "./Code";
 export { Customiazable } from "./Customiazable";
 export { Smart } from "./Smart";
 export { Small } from "./Small";
+export { ArrowRight } from "./ArrowRight";
+export { Sun } from "./Sun";
+export { Moon } from "./Moon";
+export { Github } from "./Github";
+export { Package } from "./Package";
