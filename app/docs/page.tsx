@@ -1,5 +1,6 @@
+import Documentation from "@/components/docs/Docs";
 import React from "react";
 
 export default function NextjsPage() {
-  return <div>Docs page</div>;
+  return <Documentation />;
 }
