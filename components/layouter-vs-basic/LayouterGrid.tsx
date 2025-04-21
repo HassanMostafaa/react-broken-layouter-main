@@ -10,7 +10,12 @@ export const LayouterGrid: React.FunctionComponent<{ cols: number }> = ({
   cols = 2,
 }) => {
   return (
-    <div className="flex flex-col gap-4 lg-gap-[1vw]">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
+      className="flex flex-col gap-4 lg-gap-[1vw]"
+    >
       <TypewriterText
         text="React Broken Layouter"
         speed={50}
@@ -35,6 +40,6 @@ export const LayouterGrid: React.FunctionComponent<{ cols: number }> = ({
           />
         </motion.div>
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 };

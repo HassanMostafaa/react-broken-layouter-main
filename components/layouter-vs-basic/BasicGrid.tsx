@@ -8,7 +8,12 @@ export const BasicGrid: React.FunctionComponent<{ cols: number }> = ({
   cols = 2,
 }) => {
   return (
-    <div className="flex flex-col gap-4">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
+      className="flex flex-col gap-4"
+    >
       <h3 className="text-[18px] lg:text-xl text-neutral-800 dark:text-neutral-100 font-bold ">
         CSS Grid
       </h3>
@@ -29,6 +34,6 @@ export const BasicGrid: React.FunctionComponent<{ cols: number }> = ({
           </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
