@@ -25,7 +25,7 @@ export const LayouterGrid: React.FunctionComponent<{ cols: number }> = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4 }}
-          className="p-8 lg:p-[2vw] rounded-3xl bg-neutral-100 dark:bg-neutral-800"
+          className="p-8 max-md:p-3 lg:p-[2vw] rounded-3xl bg-neutral-100 dark:bg-neutral-800"
         >
           <Layouter
             cols={cols}

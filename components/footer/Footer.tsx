@@ -5,7 +5,7 @@ import TypewriterText from "../typewriter-text/TypewriterText";
 export const Footer: React.FunctionComponent = () => {
   return (
     <footer className="p-[24px] lg:p-[1vw] flex justify-between">
-      <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+      <span className="text-[16px] lg:text-sm text-gray-500 sm:text-center dark:text-gray-400">
         License MIT{" "}
         <a
           href="https://github.com/HassanMostafaa"

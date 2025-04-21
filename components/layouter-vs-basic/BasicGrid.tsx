@@ -14,7 +14,7 @@ export const BasicGrid: React.FunctionComponent<{ cols: number }> = ({
       </h3>
 
       <div
-        className="grid gap-4 p-8 lg:p-[2vw] rounded-3xl bg-neutral-100 dark:bg-neutral-800"
+        className="grid gap-4 p-8 max-md:p-3 lg:p-[2vw] rounded-3xl bg-neutral-100 dark:bg-neutral-800"
         style={{
           gridTemplateColumns: `repeat(${cols}, minmax(100px, 1fr))`,
         }}
