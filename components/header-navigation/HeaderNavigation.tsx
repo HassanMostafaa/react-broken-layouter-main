@@ -5,7 +5,7 @@ import TypewriterText from "../typewriter-text/TypewriterText";
 
 export const HeaderNavigation = () => {
   return (
-    <div className="flex justify-between items-center px-[5%] py-[16px] lg:px-[2vw] lg:py-[2vw]">
+    <div className="flex justify-between items-center max-sm:items-start px-[5%] py-[16px] lg:px-[2vw] lg:py-[2vw]">
       {/* logo */}
       <Link href="/">
         <TypewriterText
@@ -15,7 +15,7 @@ export const HeaderNavigation = () => {
         />
       </Link>
 
-      <div className="flex flex-col-reverse gap-2 items-center lg:gap-[2vw] lg:flex-row">
+      <div className="flex flex-col-reverse gap-2 items-end lg:gap-[2vw] lg:flex-row">
         <Link href="/docs" className="link">
           Documentation
         </Link>
