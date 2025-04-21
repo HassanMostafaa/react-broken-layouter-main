@@ -50,7 +50,7 @@ export const Hero: React.FunctionComponent<IHeroProps> = ({
     </motion.p>
 
     {/* CTAs */}
-    <div className="flex gap-[16px] flex-wrap justify-center items-center lg:gap-[2vw]">
+    <div className="flex gap-[16px] flex-wrap justify-center items-stretch lg:gap-[2vw]">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -79,7 +79,8 @@ export const Hero: React.FunctionComponent<IHeroProps> = ({
           <Link
             href={cta2?.href}
             target={cta2?.target}
-            className="text-[16px] lg:text-lg font-semibold bg-blue-50 hover:bg-blue-100 px-[16px] py-[8px] lg:px-[1vw] lg:py-[.5vw] rounded-md border border-blue-600 text-blue-600"
+            // className="text-[16px] lg:text-lg  font-semibold bg-blue-50 hover:bg-blue-100 px-[16px] py-[8px] lg:px-[1vw] lg:py-[.5vw] rounded-md border border-blue-600 text-blue-600"
+            className="flex gap-1 items-center  whitespace-nowrap text-[16px] lg:text-lg font-semibold bg-blue-100 hover:bg-blue-200 px-[16px] py-[8px] lg:px-[1vw] lg:py-[.5vw] rounded-md text-blue-600"
           >
             {cta2?.title}
           </Link>

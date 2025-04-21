@@ -5,7 +5,7 @@ import TypewriterText from "../typewriter-text/TypewriterText";
 export const Footer: React.FunctionComponent = () => {
   return (
     <footer className="p-[24px] lg:p-[1vw] flex justify-between">
-      <span className="text-[16px] lg:text-sm text-gray-500 sm:text-center dark:text-gray-400">
+      <span className="text-[12px] lg:text-sm text-gray-500 sm:text-center dark:text-gray-400">
         License MIT{" "}
         <a
           href="https://github.com/HassanMostafaa"
@@ -20,14 +20,14 @@ export const Footer: React.FunctionComponent = () => {
           href="https://github.com/HassanMostafaa/react-broken-layouter"
           className="text-md flex justify-center items-center gap-2 lg:gap-[.5vw] bg-neutral-100 dark:bg-neutral-800 p-2 rounded-md"
         >
-          <TypewriterText text="GITHUB" className="text-[14px] lg:text-sm" />
+          <TypewriterText text="GITHUB" className="text-[12px] lg:text-sm" />
           <Github size={"1vw"} />
         </a>
         <a
           href="https://www.npmjs.com/package/react-broken-layouter"
           className="text-md flex justify-center items-center gap-2 lg:gap-[.5vw] bg-neutral-100 dark:bg-neutral-800 p-2 rounded-md "
         >
-          <TypewriterText text="NPM" className="text-[14px] lg:text-sm" />
+          <TypewriterText text="NPM" className="text-[12px] lg:text-sm" />
           <Package size={"1vw"} />
         </a>
       </div>
