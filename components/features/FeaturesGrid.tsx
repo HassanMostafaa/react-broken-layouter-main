@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { features } from "./data";
-import Card from "../card/Card";
+import FeatureCard from "../card/Card";
 
 export const FeaturesGrid: React.FunctionComponent = () => (
   <div>
@@ -22,7 +22,7 @@ export const FeaturesGrid: React.FunctionComponent = () => (
             },
           }}
         >
-          <Card {...card} />
+          <FeatureCard {...card} />
         </motion.div>
       ))}
     </motion.div>

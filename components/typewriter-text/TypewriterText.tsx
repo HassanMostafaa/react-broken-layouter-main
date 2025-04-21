@@ -6,29 +6,40 @@ type Props = {
   text: string;
   className?: string;
   speed?: number;
+  delay?: number;
+  duration?: number;
 };
 
-const TypewriterText = ({ text = "", className = "", speed = 50 }: Props) => {
+const TypewriterText = ({
+  text = "",
+  className = "",
+  speed = 50,
+  delay = 0,
+  duration = 0.5,
+}: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     if (!text) return;
 
-    let i = 0;
-    const interval = setInterval(() => {
-      i++;
-      setCurrentIndex(i);
+    const timeout = setTimeout(() => {
+      let i = 0;
+      const interval = setInterval(() => {
+        i++;
+        setCurrentIndex(i);
 
-      if (i >= text.length) clearInterval(interval);
-    }, speed);
+        if (i >= text.length) clearInterval(interval);
+      }, speed);
+    }, delay * 1000); // convert seconds to ms
 
-    return () => clearInterval(interval);
-  }, [text, speed]);
+    return () => clearTimeout(timeout);
+  }, [text, speed, delay]);
 
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
+      transition={{ duration: duration, delay: delay }}
       className={className}
     >
       {text.slice(0, currentIndex)}

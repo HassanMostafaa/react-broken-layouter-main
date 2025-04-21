@@ -5,7 +5,11 @@ export interface CardProps {
   title: string;
   subtitle: string;
 }
-const Card: FunctionComponent<CardProps> = ({ icon, subtitle, title }) => {
+const FeatureCard: FunctionComponent<CardProps> = ({
+  icon,
+  subtitle,
+  title,
+}) => {
   return (
     <div className=" p-[16px] h-full lg:p-[2vw] rounded-2xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 flex flex-col gap-[16px] lg:gap-[1vw]">
       {icon && (
@@ -19,4 +23,4 @@ const Card: FunctionComponent<CardProps> = ({ icon, subtitle, title }) => {
   );
 };
 
-export default Card;
+export default FeatureCard;

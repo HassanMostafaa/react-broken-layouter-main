@@ -15,7 +15,7 @@ export const HeaderNavigation = () => {
         />
       </Link>
 
-      <div className="flex flex-col gap-2 items-center lg:gap-[2vw] lg:flex-row">
+      <div className="flex flex-col-reverse gap-2 items-center lg:gap-[2vw] lg:flex-row">
         <Link href="/docs" className="link">
           Documentation
         </Link>

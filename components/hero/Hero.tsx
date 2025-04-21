@@ -4,7 +4,24 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "../assets/icons";
 
-export const Hero: React.FunctionComponent = () => (
+interface ICTA {
+  title: string;
+  href: string;
+  target?: string;
+}
+interface IHeroProps {
+  title?: string[];
+  subtitle?: string;
+  cta1?: ICTA;
+  cta2?: ICTA;
+}
+
+export const Hero: React.FunctionComponent<IHeroProps> = ({
+  cta1,
+  cta2,
+  subtitle,
+  title,
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
@@ -17,9 +34,9 @@ export const Hero: React.FunctionComponent = () => (
       transition={{ delay: 0.3, duration: 0.8 }}
       className="text-[18px] font-semibold lg:text-5xl text-center"
     >
-      Create Beautiful{" "}
+      {title?.[0]} {title?.[1]}{" "}
       <span className="bg-gradient-to-r from-blue-600  via-purple-700 to-indigo-400 inline-block text-transparent bg-clip-text">
-        Masonry Layouts
+        {title?.[2]} {title?.[3]}
       </span>
     </motion.h2>
 
@@ -29,8 +46,7 @@ export const Hero: React.FunctionComponent = () => (
       transition={{ delay: 0.6, duration: 0.8 }}
       className="text-[14px] lg:text-xl text-center w-3/4 mx-auto"
     >
-      A lightweight React utility for creating responsive masonry-style layouts
-      with automatic height estimation and column distribution.
+      {subtitle}
     </motion.p>
 
     {/* CTAs */}
@@ -40,15 +56,18 @@ export const Hero: React.FunctionComponent = () => (
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.8 }}
       >
-        <Link
-          href={"/docs"}
-          className="flex gap-1 items-center  whitespace-nowrap text-[16px] lg:text-lg font-semibold bg-blue-600 hover:bg-blue-700 px-[16px] py-[8px] lg:px-[1vw] lg:py-[.5vw] rounded-md text-blue-50"
-        >
-          Get started{" "}
-          <span>
-            <ArrowRight size={"1vw"} />
-          </span>
-        </Link>
+        {cta1?.href && (
+          <Link
+            href={cta1?.href}
+            target={cta1?.target}
+            className="flex gap-1 items-center  whitespace-nowrap text-[16px] lg:text-lg font-semibold bg-blue-600 hover:bg-blue-700 px-[16px] py-[8px] lg:px-[1vw] lg:py-[.5vw] rounded-md text-blue-50"
+          >
+            {cta1?.title}{" "}
+            <span>
+              <ArrowRight size={"1vw"} />
+            </span>
+          </Link>
+        )}
       </motion.div>
 
       <motion.div
@@ -56,12 +75,15 @@ export const Hero: React.FunctionComponent = () => (
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
       >
-        <Link
-          href={"/demo"}
-          className="text-[16px] lg:text-lg font-semibold bg-blue-50 hover:bg-blue-100 px-[16px] py-[8px] lg:px-[1vw] lg:py-[.5vw] rounded-md border border-blue-600 text-blue-600"
-        >
-          View demo
-        </Link>
+        {cta2?.href && (
+          <Link
+            href={cta2?.href}
+            target={cta2?.target}
+            className="text-[16px] lg:text-lg font-semibold bg-blue-50 hover:bg-blue-100 px-[16px] py-[8px] lg:px-[1vw] lg:py-[.5vw] rounded-md border border-blue-600 text-blue-600"
+          >
+            {cta2?.title}
+          </Link>
+        )}
       </motion.div>
     </div>
   </motion.div>
