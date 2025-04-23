@@ -10,6 +10,17 @@ type Props = {
   duration?: number;
 };
 
+/**
+ * A React component that renders a typewriter effect.
+ *
+ * @param {{ text: string, className?: string, speed?: number, delay?: number, duration?: number }} props
+ * @prop {string} text The text to be rendered with the typewriter effect.
+ * @prop {string} [className] The CSS class name to be applied to the wrapping element.
+ * @prop {number} [speed] The speed of the typewriter effect in milliseconds. Defaults to 50.
+ * @prop {number} [delay] The delay before the typewriter effect starts in seconds. Defaults to 0.
+ * @prop {number} [duration] The duration of the animation in seconds. Defaults to 0.5.
+ * @returns {JSX.Element}
+ */
 const TypewriterText = ({
   text = "",
   className = "",

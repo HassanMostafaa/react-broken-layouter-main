@@ -1,4 +1,4 @@
-import { ICardProps } from "./Card";
+import { ICardProps } from "./ImageCard";
 
 export const cards: ICardProps[] = [
   {
@@ -11,7 +11,7 @@ export const cards: ICardProps[] = [
   {
     id: "item-2",
     image:
-      "https://images.unsplash.com/photo-1744315900478-fa44dc6a4e89?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1743972939938-0226de487d67?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Beautiful Views",
   },
   {

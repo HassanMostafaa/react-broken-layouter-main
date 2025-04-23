@@ -1,4 +1,4 @@
-import { CardProps } from "../card/Card";
+import { CardProps } from "../card/IconCard";
 import { Code, Customiazable, Responsive, Small, Smart } from "../assets/icons";
 
 export const features: CardProps[] = [

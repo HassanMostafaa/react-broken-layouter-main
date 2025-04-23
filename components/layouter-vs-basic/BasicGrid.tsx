@@ -1,6 +1,6 @@
 "use client";
 
-import { Card } from "./Card";
+import { ImageCard } from "./ImageCard";
 import { cards } from "./data";
 import { motion } from "framer-motion";
 
@@ -9,9 +9,10 @@ export const BasicGrid: React.FunctionComponent<{ cols: number }> = ({
 }) => {
   return (
     <motion.div
+      key={cols}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
       className="flex flex-col gap-4"
     >
       <h3 className="text-[18px] lg:text-xl text-neutral-800 dark:text-neutral-100 font-bold ">
@@ -27,10 +28,14 @@ export const BasicGrid: React.FunctionComponent<{ cols: number }> = ({
         {cards.map((card) => (
           <motion.div
             key={card.id}
-            layout
-            transition={{ duration: 0.4, ease: "easeInOut" }}
+            // layout
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            // transition={{ duration: 0.4 }}
+            transition={{ delay: 0.4, duration: 0.4, ease: "easeInOut" }}
           >
-            <Card {...card} />
+            <ImageCard {...card} />
           </motion.div>
         ))}
       </div>

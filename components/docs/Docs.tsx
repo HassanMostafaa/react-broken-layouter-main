@@ -73,13 +73,13 @@ const Documentation: React.FC = () => {
 
   return (
     <div
-      className={`w-3/4 mx-auto min-h-screen font-sans transition-colors duration-300 ${
+      className={`w-[90%] mx-auto min-h-screen font-sans transition-colors duration-300 ${
         theme === "dark"
           ? "dark bg-neutral-900 text-neutral-100"
           : "bg-white text-neutral-800"
       }`}
     >
-      <div className=" mx-auto px-4 md:px-6 py-8 md:py-12">
+      <div className="mx-auto md:px-6 py-8 md:py-12">
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div
@@ -91,7 +91,7 @@ const Documentation: React.FC = () => {
               {sections.map((section) => (
                 <button
                   key={section.id}
-                  className={`block w-full text-left p-3 rounded-md transition-colors ${
+                  className={`block w-full text-left p-3 rounded-md transition-colors text-[14px] lg:text-base ${
                     activeSection === section.id
                       ? theme === "dark"
                         ? "bg-neutral-800 text-indigo-400"
@@ -115,12 +115,14 @@ const Documentation: React.FC = () => {
                 theme === "dark" ? "bg-neutral-800/50" : "bg-neutral-50"
               }`}
             >
-              <h2 className="text-lg font-semibold mb-4">Contents</h2>
+              <h2 className="text-[14px] lg:text-lg font-semibold mb-4">
+                Contents
+              </h2>
               <nav className="space-y-2">
                 {sections.map((section) => (
                   <button
                     key={section.id}
-                    className={`flex items-center w-full text-left p-2 text-sm rounded-md transition-all ${
+                    className={`flex items-center w-full text-left p-2 text-[12px] lg:text-sm rounded-md transition-all ${
                       activeSection === section.id
                         ? theme === "dark"
                           ? "bg-neutral-700/50 text-indigo-400 font-medium"
@@ -147,21 +149,25 @@ const Documentation: React.FC = () => {
           </aside>
 
           {/* Main Content */}
-          <main className="flex-1  ">
+          <main className="flex-1">
             {/* Introduction */}
             <div
               ref={(ref) => registerSectionRef("features", ref)}
               className="space-y-6 mb-12"
             >
-              <h2 className="text-3xl font-bold">React Broken Layouter</h2>
-              <p className="text-lg opacity-80">
+              <h2 className="text-[14px] lg:text-3xl font-bold">
+                React Broken Layouter
+              </h2>
+              <p className="text-[12px] lg:text-lg opacity-80">
                 A lightweight React utility for creating responsive
                 masonry-style layouts with automatic height estimation and
                 column distribution.
               </p>
 
               {/* Features */}
-              <h3 className="text-2xl font-semibold mt-10">Features</h3>
+              <h3 className="text-[14px] lg:text-2xl font-semibold mt-10">
+                Features
+              </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {features.map((feature, index) => (
                   <div
@@ -173,11 +179,15 @@ const Documentation: React.FC = () => {
                     }`}
                   >
                     <div className="flex items-start mb-2">
-                      <span className="mr-2 text-xl">{feature.emoji}</span>
-                      <h4 className="font-medium">{feature.title}</h4>
+                      <span className="mr-2 text-[14px] lg:text-xl">
+                        {feature.emoji}
+                      </span>
+                      <h4 className="text-[14px] font-medium">
+                        {feature.title}
+                      </h4>
                     </div>
                     <p
-                      className={`text-sm ${
+                      className={`text-[12px] lg:text-sm ${
                         theme === "dark"
                           ? "text-neutral-400"
                           : "text-neutral-600"
@@ -195,10 +205,10 @@ const Documentation: React.FC = () => {
               ref={(ref) => registerSectionRef("environment", ref)}
               className="space-y-6 mb-12"
             >
-              <h3 className="text-2xl font-semibold border-b pb-2 border-neutral-200 dark:border-neutral-700">
+              <h3 className="text-[14px] lg:text-2xl font-semibold border-b pb-2 border-neutral-200 dark:border-neutral-700">
                 Environment Compatibility
               </h3>
-              <p>
+              <p className="text-[12px]">
                 This component is primarily designed for client-side use in
                 React applications. While it doesn&apos;t use React hooks, it
                 relies on client-side calculations for optimal layout and height
@@ -219,7 +229,7 @@ const Documentation: React.FC = () => {
                   type="neutral"
                   isDarkMode={theme === "dark"}
                 >
-                  <p className="mb-3">
+                  <p className="mb-3 text-[12px]">
                     To use this component with server components in frameworks
                     like Next.js, follow these guidelines:
                   </p>
@@ -232,7 +242,7 @@ import Layouter from "react-broken-layouter";`}
                     isCopied={copiedSection === "client-directive"}
                     isDarkMode={theme === "dark"}
                   />
-                  <p className="my-3">
+                  <p className="my-3 text-[12px]">
                     Provide explicit heights via{" "}
                     <code className="px-1 py-0.5 rounded bg-neutral-200 dark:bg-neutral-700">
                       getHeight
@@ -279,7 +289,7 @@ import Layouter from "react-broken-layouter";`}
               ref={(ref) => registerSectionRef("installation", ref)}
               className="space-y-4 mb-12"
             >
-              <h3 className="text-2xl font-semibold border-b pb-2 border-neutral-200 dark:border-neutral-700">
+              <h3 className="text-[14px] lg:text-2xl font-semibold border-b pb-2 border-neutral-200 dark:border-neutral-700">
                 Installation
               </h3>
               <CodeBlock
@@ -305,13 +315,15 @@ import Layouter from "react-broken-layouter";`}
               ref={(ref) => registerSectionRef("usage", ref)}
               className="space-y-6 mb-12"
             >
-              <h3 className="text-2xl font-semibold border-b pb-2 border-neutral-200 dark:border-neutral-700">
+              <h3 className="text-[14px] lg:text-2xl font-semibold border-b pb-2 border-neutral-200 dark:border-neutral-700">
                 Usage
               </h3>
 
               <div>
-                <h4 className="text-xl font-medium mb-3">Basic Example</h4>
-                <p className="mb-4">
+                <h4 className="text-[14px] lg:text-xl font-medium mb-3">
+                  Basic Example
+                </h4>
+                <p className="mb-4 text-[12px]">
                   A simple setup with a fixed number of columns:
                 </p>
                 <CodeBlock
@@ -347,8 +359,10 @@ export default function App() {
               </div>
 
               <div>
-                <h4 className="text-xl font-medium mb-3">Custom Render</h4>
-                <p className="mb-4">
+                <h4 className="text-[14px] lg:text-xl font-medium mb-3">
+                  Custom Render
+                </h4>
+                <p className="mb-4 text-[12px]">
                   You can provide a custom render function that returns a
                   component to display each item:
                 </p>
@@ -375,16 +389,19 @@ export default function App() {
                     theme === "dark" ? "bg-neutral-800" : "bg-blue-50"
                   } ${theme === "dark" ? "text-blue-300" : "text-blue-800"}`}
                 >
-                  <strong>Note:</strong> The{" "}
-                  <code className="px-1 py-0.5 rounded bg-neutral-200 dark:bg-neutral-700">
-                    render
-                  </code>{" "}
-                  prop expects a component that accepts an{" "}
-                  <code className="px-1 py-0.5 rounded bg-neutral-200 dark:bg-neutral-700">
-                    item
-                  </code>{" "}
-                  prop. Using a function allows dynamic rendering while
-                  maintaining compatibility.
+                  <strong className="text-[12px]">Note:</strong>{" "}
+                  <span className="text-[12px]">
+                    The{" "}
+                    <code className="px-1 py-0.5 rounded bg-neutral-200 dark:bg-neutral-700">
+                      render
+                    </code>{" "}
+                    prop expects a component that accepts an{" "}
+                    <code className="px-1 py-0.5 rounded bg-neutral-200 dark:bg-neutral-700">
+                      item
+                    </code>{" "}
+                    prop. Using a function allows dynamic rendering while
+                    maintaining compatibility.
+                  </span>
                 </div>
               </div>
             </div>
@@ -394,10 +411,10 @@ export default function App() {
               ref={(ref) => registerSectionRef("responsive", ref)}
               className="space-y-6 mb-12"
             >
-              <h3 className="text-2xl font-semibold border-b pb-2 border-neutral-200 dark:border-neutral-700">
+              <h3 className="text-[14px] lg:text-2xl font-semibold border-b pb-2 border-neutral-200 dark:border-neutral-700">
                 Responsive Layout with <code>breakpoints</code>
               </h3>
-              <p className="mb-4">
+              <p className="mb-4 text-[12px]">
                 Use the{" "}
                 <code className="px-1 py-0.5 rounded bg-neutral-200 dark:bg-neutral-700">
                   breakpoints
@@ -427,22 +444,22 @@ export default function App() {
                 isCopied={copiedSection === "responsive-layout"}
                 isDarkMode={theme === "dark"}
               />
-              <p>This dynamically sets:</p>
+              <p className="text-[12px]">This dynamically sets:</p>
               <ul className="list-disc pl-5 space-y-1 mt-2">
-                <li>
+                <li className="text-[12px]">
                   1 column below 768px (using{" "}
                   <code className="px-1 py-0.5 rounded bg-neutral-200 dark:bg-neutral-700">
                     cols
                   </code>
                   )
                 </li>
-                <li>2 columns from 768px to 1023px</li>
-                <li>3 columns from 1024px to 1439px</li>
-                <li>4 columns at 1440px and above</li>
+                <li className="text-[12px]">2 columns from 768px to 1023px</li>
+                <li className="text-[12px]">3 columns from 1024px to 1439px</li>
+                <li className="text-[12px]">4 columns at 1440px and above</li>
               </ul>
 
               <div className="mt-8 p-5 rounded-lg border border-dashed transition-colors duration-300 border-neutral-300 dark:border-neutral-700">
-                <h4 className="text-lg font-medium mb-3">
+                <h4 className="text-[14px] lg:text-lg font-medium mb-3">
                   Responsive Visualization
                 </h4>
                 <div
@@ -454,7 +471,7 @@ export default function App() {
                     {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
                       <div
                         key={num}
-                        className={`h-24 rounded-md flex items-center justify-center transition-colors ${
+                        className={`h-24 rounded-md flex items-center justify-center transition-colors text-[12px] ${
                           theme === "dark"
                             ? "bg-neutral-800 hover:bg-neutral-700"
                             : "bg-neutral-100 hover:bg-neutral-200"
@@ -464,7 +481,7 @@ export default function App() {
                       </div>
                     ))}
                   </div>
-                  <div className="flex justify-between mt-2 text-xs uppercase tracking-wide opacity-70">
+                  <div className="flex justify-between mt-2 text-[12px] uppercase tracking-wide opacity-70">
                     <span>&lt; 768px: 1 col</span>
                     <span>768-1023px: 2 cols</span>
                     <span>1024-1439px: 3 cols</span>
@@ -479,7 +496,7 @@ export default function App() {
               ref={(ref) => registerSectionRef("props", ref)}
               className="space-y-6 mb-12"
             >
-              <h3 className="text-2xl font-semibold border-b pb-2 border-neutral-200 dark:border-neutral-700">
+              <h3 className="text-[14px] lg:text-2xl font-semibold border-b pb-2 border-neutral-200 dark:border-neutral-700">
                 Props
               </h3>
               <div className="overflow-x-auto">
@@ -494,15 +511,19 @@ export default function App() {
                         theme === "dark" ? "bg-neutral-800" : "bg-neutral-100"
                       }
                     >
-                      <th className="py-3 px-4 text-left font-medium">Prop</th>
-                      <th className="py-3 px-4 text-left font-medium">Type</th>
-                      <th className="py-3 px-4 text-center font-medium">
+                      <th className="py-3 px-4 text-left font-medium text-[14px]">
+                        Prop
+                      </th>
+                      <th className="py-3 px-4 text-left font-medium text-[14px]">
+                        Type
+                      </th>
+                      <th className="py-3 px-4 text-center font-medium text-[14px]">
                         Required
                       </th>
-                      <th className="py-3 px-4 text-left font-medium">
+                      <th className="py-3 px-4 text-left font-medium text-[14px]">
                         Default
                       </th>
-                      <th className="py-3 px-4 text-left font-medium">
+                      <th className="py-3 px-4 text-left font-medium text-[14px]">
                         Description
                       </th>
                     </tr>
@@ -521,13 +542,13 @@ export default function App() {
                             : "bg-white"
                         }`}
                       >
-                        <td className="py-3 px-4 font-mono text-sm">
+                        <td className="py-3 px-4 font-mono text-[12px] lg:text-sm">
                           {prop.name}
                         </td>
-                        <td className="py-3 px-4 font-mono text-xs">
+                        <td className="py-3 px-4 font-mono text-[12px] lg:text-xs">
                           {prop.type}
                         </td>
-                        <td className="py-3 px-4 text-center">
+                        <td className="py-3 px-4 text-center text-[12px]">
                           {prop.required ? (
                             <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-500/20 text-green-500">
                               ✓
@@ -538,10 +559,10 @@ export default function App() {
                             </span>
                           )}
                         </td>
-                        <td className="py-3 px-4 font-mono text-sm">
+                        <td className="py-3 px-4 font-mono text-[12px] lg:text-sm">
                           {prop.default || "-"}
                         </td>
-                        <td className="py-3 px-4 text-sm">
+                        <td className="py-3 px-4 text-[12px] lg:text-sm">
                           {prop.description}
                         </td>
                       </tr>
@@ -556,10 +577,10 @@ export default function App() {
               ref={(ref) => registerSectionRef("utility", ref)}
               className="space-y-6 mb-12"
             >
-              <h3 className="text-2xl font-semibold border-b pb-2 border-neutral-200 dark:border-neutral-700">
+              <h3 className="text-[14px] lg:text-2xl font-semibold border-b pb-2 border-neutral-200 dark:border-neutral-700">
                 Utility Functions
               </h3>
-              <p className="mb-4">
+              <p className="mb-4 text-[12px]">
                 These utility functions simplify common tasks like height
                 estimation and ID generation:
               </p>
@@ -574,10 +595,10 @@ export default function App() {
                         : "border-neutral-200 bg-neutral-50"
                     }`}
                   >
-                    <h4 className="text-xl font-medium mb-2 font-mono">
+                    <h4 className="text-[14px] lg:text-xl font-medium mb-2 font-mono">
                       {util.name}
                     </h4>
-                    <p className="mb-4">{util.description}</p>
+                    <p className="mb-4 text-[12px]">{util.description}</p>
 
                     <CodeBlock
                       title={`${util.name} Example`}
@@ -599,7 +620,7 @@ export default function App() {
               ref={(ref) => registerSectionRef("experimental", ref)}
               className="space-y-6 mb-12"
             >
-              <h3 className="text-2xl font-semibold border-b pb-2 border-neutral-200 dark:border-neutral-700">
+              <h3 className="text-[14px] lg:text-2xl font-semibold border-b pb-2 border-neutral-200 dark:border-neutral-700">
                 Experimental Features
               </h3>
 
@@ -610,17 +631,17 @@ export default function App() {
                     : "bg-yellow-50 text-yellow-800"
                 }`}
               >
-                <p className="font-medium mb-2">
+                <p className="font-medium mb-2 text-[12px]">
                   Note: These features are experimental and may not work
                   perfectly in all scenarios. Test thoroughly with your use
                   case.
                 </p>
               </div>
 
-              <h4 className="text-xl font-medium mb-3 mt-6">
+              <h4 className="text-[14px] lg:text-xl font-medium mb-3 mt-6">
                 Height Estimation
               </h4>
-              <p className="mb-4">
+              <p className="mb-4 text-[12px]">
                 The height estimation features (
                 <code className="px-1 py-0.5 rounded bg-neutral-200 dark:bg-neutral-700">
                   getHeight
@@ -635,13 +656,13 @@ export default function App() {
               </p>
 
               <ul className="list-disc pl-5 space-y-2">
-                <li>
+                <li className="text-[12px]">
                   <code className="px-1 py-0.5 rounded bg-neutral-200 dark:bg-neutral-700">
                     getHeight
                   </code>
                   : Allows you to provide exact heights for items
                 </li>
-                <li>
+                <li className="text-[12px]">
                   <code className="px-1 py-0.5 rounded bg-neutral-200 dark:bg-neutral-700">
                     estimateHeight
                   </code>
@@ -655,20 +676,20 @@ export default function App() {
               ref={(ref) => registerSectionRef("how-it-works", ref)}
               className="space-y-6 mb-12"
             >
-              <h3 className="text-2xl font-semibold border-b pb-2 border-neutral-200 dark:border-neutral-700">
+              <h3 className="text-[14px] lg:text-2xl font-semibold border-b pb-2 border-neutral-200 dark:border-neutral-700">
                 How It Works
               </h3>
 
-              <p>The Layouter component:</p>
+              <p className="text-[12px]">The Layouter component:</p>
 
               <ol className="list-decimal pl-5 space-y-3 mt-4">
-                <li className="pl-2">
+                <li className="pl-2 text-[12px]">
                   Estimates the height of each item based on content length
                 </li>
-                <li className="pl-2">
+                <li className="pl-2 text-[12px]">
                   Distributes items across columns to maintain balanced heights
                 </li>
-                <li className="pl-2">
+                <li className="pl-2 text-[12px]">
                   Renders items in a responsive grid layout
                 </li>
               </ol>
@@ -684,8 +705,10 @@ export default function App() {
                       theme === "dark" ? "bg-neutral-700" : "bg-white"
                     } shadow-sm`}
                   >
-                    <h5 className="font-medium mb-2">1. Height Estimation</h5>
-                    <div className="flex items-center text-sm">
+                    <h5 className="font-medium mb-2 text-[14px]">
+                      1. Height Estimation
+                    </h5>
+                    <div className="flex items-center text-[12px]">
                       <div
                         className={`w-20 h-6 rounded ${
                           theme === "dark" ? "bg-neutral-600" : "bg-neutral-200"
@@ -695,7 +718,7 @@ export default function App() {
                       <div
                         className={`w-10 h-6 rounded ${
                           theme === "dark" ? "bg-indigo-800" : "bg-indigo-200"
-                        } flex items-center justify-center text-xs`}
+                        } flex items-center justify-center text-[12px]`}
                       >
                         120px
                       </div>
@@ -707,7 +730,9 @@ export default function App() {
                       theme === "dark" ? "bg-neutral-700" : "bg-white"
                     } shadow-sm`}
                   >
-                    <h5 className="font-medium mb-2">2. Column Distribution</h5>
+                    <h5 className="font-medium mb-2 text-[14px]">
+                      2. Column Distribution
+                    </h5>
                     <div className="grid grid-cols-3 gap-2">
                       <div className="flex flex-col space-y-2">
                         <div
@@ -753,42 +778,42 @@ export default function App() {
                       theme === "dark" ? "bg-neutral-700" : "bg-white"
                     } shadow-sm`}
                   >
-                    <h5 className="font-medium mb-2">
+                    <h5 className="font-medium mb-2 text-[14px]">
                       3. Responsive Rendering
                     </h5>
                     <div className="flex space-x-3 items-center">
-                      <div className="w-10 text-center text-xs">Small</div>
+                      <div className="w-10 text-center text-[12px]">Small</div>
                       <div className="flex-1 h-6 flex">
                         <div
                           className={`w-full rounded-l ${
                             theme === "dark" ? "bg-purple-800" : "bg-purple-200"
-                          } flex items-center justify-center text-xs`}
+                          } flex items-center justify-center text-[12px]`}
                         >
                           1 column
                         </div>
                       </div>
                     </div>
                     <div className="flex space-x-3 items-center mt-2">
-                      <div className="w-10 text-center text-xs">Large</div>
+                      <div className="w-10 text-center text-[12px]">Large</div>
                       <div className="flex-1 h-6 flex">
                         <div
                           className={`w-1/3 rounded-l ${
                             theme === "dark" ? "bg-purple-800" : "bg-purple-200"
-                          } flex items-center justify-center text-xs`}
+                          } flex items-center justify-center text-[12px]`}
                         >
                           col 1
                         </div>
                         <div
                           className={`w-1/3 ${
                             theme === "dark" ? "bg-purple-700" : "bg-purple-300"
-                          } flex items-center justify-center text-xs`}
+                          } flex items-center justify-center text-[12px]`}
                         >
                           col 2
                         </div>
                         <div
                           className={`w-1/3 rounded-r ${
                             theme === "dark" ? "bg-purple-600" : "bg-purple-400"
-                          } flex items-center justify-center text-xs`}
+                          } flex items-center justify-center text-[12px]`}
                         >
                           col 3
                         </div>
@@ -804,12 +829,12 @@ export default function App() {
               ref={(ref) => registerSectionRef("development", ref)}
               className="space-y-6 mb-12"
             >
-              <h3 className="text-2xl font-semibold border-b pb-2 border-neutral-200 dark:border-neutral-700">
+              <h3 className="text-[14px] lg:text-2xl font-semibold border-b pb-2 border-neutral-200 dark:border-neutral-700">
                 Development
               </h3>
 
               <CodeBlock
-                title="Installation & Development"
+                title=" Fateful Installation & Development"
                 code={`# Install dependencies
 npm install
 
@@ -830,12 +855,12 @@ npm run build`}
               ref={(ref) => registerSectionRef("license", ref)}
               className="space-y-6 mb-12"
             >
-              <h3 className="text-2xl font-semibold border-b pb-2 border-neutral-200 dark:border-neutral-700">
+              <h3 className="text-[14px] lg:text-2xl font-semibold border-b pb-2 border-neutral-200 dark:border-neutral-700">
                 License & Contributing
               </h3>
 
               <div className="space-y-4">
-                <p>
+                <p className="text-[12px]">
                   MIT ©{" "}
                   <a
                     href="https://github.com/HassanMostafa"
@@ -845,8 +870,10 @@ npm run build`}
                   </a>
                 </p>
 
-                <h4 className="text-xl font-medium">Contributing</h4>
-                <p>
+                <h4 className="text-[14px] lg:text-xl font-medium">
+                  Contributing
+                </h4>
+                <p className="text-[12px]">
                   We&apos;d love to improve React Broken Layouter with your
                   help! Contributions are welcome—please feel free to submit a
                   Pull Request or open an issue to discuss your ideas.
@@ -881,7 +908,7 @@ const CodeBlock: React.FC<{
             isDarkMode ? "bg-neutral-800" : "bg-neutral-100"
           }`}
         >
-          <span className="text-sm font-medium">{title}</span>
+          <span className="text-[12px] lg:text-sm font-medium">{title}</span>
           <button
             onClick={() => onCopy(code)}
             className={`p-1.5 rounded-md transition-colors ${
@@ -898,7 +925,7 @@ const CodeBlock: React.FC<{
         </div>
       )}
       <div
-        className={`p-4 overflow-x-auto font-mono text-sm whitespace-pre ${
+        className={`p-4 overflow-x-auto font-mono text-[12px] lg:text-sm whitespace-pre ${
           isDarkMode ? "bg-neutral-900" : "bg-neutral-50"
         }`}
       >
@@ -1010,11 +1037,15 @@ const CompatibilitySection: React.FC<{
     <div
       className={`p-4 rounded-lg border ${getBgColor()} ${getBorderColor()}`}
     >
-      <h4 className={`text-lg font-medium mb-3 ${getTextColor()}`}>{title}</h4>
+      <h4
+        className={`text-[14px] lg:text-lg font-medium mb-3 ${getTextColor()}`}
+      >
+        {title}
+      </h4>
       {items.length > 0 && (
         <ul className="space-y-1.5">
           {items.map((item, i) => (
-            <li key={i} className="flex">
+            <li key={i} className="flex text-[12px]">
               <span className="mr-2">{getIconClass()}</span>
               <span>{item}</span>
             </li>

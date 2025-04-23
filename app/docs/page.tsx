@@ -1,3 +1,4 @@
+"use client";
 import Documentation from "@/components/docs/Docs";
 import React from "react";
 

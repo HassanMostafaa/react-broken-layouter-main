@@ -4,6 +4,7 @@ import "./globals.css";
 import { HeaderNavigation } from "@/components/header-navigation/HeaderNavigation";
 import { useTheme } from "@/components/store/useTheme";
 import { useLayoutEffect } from "react";
+import Head from "next/head";
 
 export default function RootLayout({
   children,
@@ -29,6 +30,71 @@ export default function RootLayout({
   }, []);
   return (
     <html lang="en">
+      <Head>
+        {/* Primary Meta Tags */}
+        <title>
+          React Broken Layouter — Effortless Masonry Layouts for React
+        </title>
+        <meta
+          name="title"
+          content="React Broken Layouter — Effortless Masonry Layouts for React"
+        />
+        <meta
+          name="description"
+          content="Create responsive, masonry-style layouts in React with zero config. Supports breakpoints, dynamic content, and column balancing."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charSet="UTF-8" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://react-broken-layouter.vercel.app/"
+        />
+        <meta
+          property="og:title"
+          content="React Broken Layouter — Effortless Masonry Layouts for React"
+        />
+        <meta
+          property="og:description"
+          content="Create responsive, masonry-style layouts in React with zero config."
+        />
+        <meta
+          property="og:image"
+          content="https://react-broken-layouter.vercel.app/og-image.png"
+        />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:url"
+          content="https://react-broken-layouter.vercel.app/"
+        />
+        <meta
+          name="twitter:title"
+          content="React Broken Layouter — Effortless Masonry Layouts for React"
+        />
+        <meta
+          name="twitter:description"
+          content="Create responsive, masonry-style layouts in React with zero config."
+        />
+        <meta
+          name="twitter:image"
+          content="https://react-broken-layouter.vercel.app/twitter-card.png"
+        />
+
+        {/* Favicon */}
+        <link rel="icon" type="image/png" sizes="32x32" href="/rbl.png" />
+        <link rel="apple-touch-icon" href="/rbl.png" />
+
+        {/* Canonical Link */}
+        <link
+          rel="canonical"
+          href="https://react-broken-layouter.vercel.app/"
+        />
+      </Head>
+
       <body
         className={`${
           !theme ? "opacity-0" : "opacity-100"

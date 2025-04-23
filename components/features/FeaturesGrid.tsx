@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
 import { features } from "./data";
-import FeatureCard from "../card/Card";
+import FeatureCard from "../card/IconCard";
+
+/**
+ * A component that renders a responsive grid of cards with an animation effect.
+ *
+ * Animates the opacity and y position of the cards when the component comes into view.
+ *
+ * @returns {JSX.Element} A styled grid component with animation.
+ */
 
 export const FeaturesGrid: React.FunctionComponent = () => (
   <div>

@@ -7,6 +7,14 @@ import { AnimatePresence, motion } from "framer-motion";
 export default function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
 
+  /*************  ✨ Windsurf Command ⭐  *************/
+  /**
+   * Toggle the theme between light and dark
+   *
+   * Also update the `theme` value in local storage
+   * and toggle the `dark` class on the root element
+   */
+  /*******  e06b4bfb-3a12-475a-af38-5dda4abf7df3  *******/
   const toggleTheme = () => {
     const next = theme === "dark" ? "light" : "dark";
     setTheme(next);

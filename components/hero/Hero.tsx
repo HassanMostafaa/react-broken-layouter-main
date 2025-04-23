@@ -16,6 +16,18 @@ interface IHeroProps {
   cta2?: ICTA;
 }
 
+/**
+ * A hero component with a title, subtitle, and up to two CTAs.
+ *
+ * @param {Object} props - The properties object.
+ * @param {string[]} [props.title] - Title of the hero component, split into four parts for animation purposes.
+ * @param {string} [props.subtitle] - Subtitle of the hero component.
+ * @param {Object} [props.cta1] - Object with `title` and `href` properties for the first CTA.
+ * @param {Object} [props.cta2] - Object with `title` and `href` properties for the second CTA.
+ *
+ * @returns {JSX.Element} A hero component with a title, subtitle, and up to two CTAs.
+ */
+
 export const Hero: React.FunctionComponent<IHeroProps> = ({
   cta1,
   cta2,

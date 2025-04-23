@@ -1,11 +1,22 @@
 "use client";
 
 import TypewriterText from "../typewriter-text/TypewriterText";
-import { Card, ICardProps } from "./Card";
+import { ImageCard, ICardProps } from "./ImageCard";
 import { cards } from "./data";
 import Layouter from "react-broken-layouter";
 import { motion, AnimatePresence } from "framer-motion";
 
+/**
+ * A component that renders a grid of cards using React Broken Layouter.
+ *
+ * Animates the opacity of the grid and its contents when the `cols` prop changes.
+ *
+ * @example
+ * <LayouterGrid cols={2} />
+ * @param {{ cols: number }} props
+ * @prop {number} cols The number of columns to display in the grid. Defaults to 2.
+ * @returns {JSX.Element}
+ */
 export const LayouterGrid: React.FunctionComponent<{ cols: number }> = ({
   cols = 2,
 }) => {
@@ -13,14 +24,14 @@ export const LayouterGrid: React.FunctionComponent<{ cols: number }> = ({
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
+      transition={{ duration: 0.5, ease: "easeOut", delay: 0.8 }}
       className="flex flex-col gap-4 lg-gap-[1vw]"
     >
       <TypewriterText
         text="React Broken Layouter"
         speed={50}
         delay={2}
-        className="bg-gradient-to-r from-blue-600 via-purple-700 to-indigo-400 inline-block text-transparent bg-clip-text font-semibold text-[16px] lg:text-2xl"
+        className="bg-gradient-to-r from-blue-600 via-purple-700 to-indigo-400 inline-block text-transparent bg-clip-text text-[18px] lg:text-xl font-bold "
       />
 
       <AnimatePresence mode="wait">
@@ -36,7 +47,7 @@ export const LayouterGrid: React.FunctionComponent<{ cols: number }> = ({
             cols={cols}
             items={cards}
             getId={(item: ICardProps) => item.id ?? ""}
-            render={({ item }: { item: ICardProps }) => <Card {...item} />}
+            render={({ item }: { item: ICardProps }) => <ImageCard {...item} />}
           />
         </motion.div>
       </AnimatePresence>
